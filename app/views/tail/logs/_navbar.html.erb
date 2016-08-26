@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <ul class="nav navbar-nav">
       <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Logs <span class="caret"></span></a>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= @log_file_name %> <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <% @web_logger.files.each do |file| %>
             <li><%= link_to file, tail.root_path(file_name: file, n: params[:n]) %></li>
