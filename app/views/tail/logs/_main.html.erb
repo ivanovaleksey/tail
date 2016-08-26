@@ -8,7 +8,7 @@
     <tbody>
     <% @files.each do |line| %>
       <tr>
-        <td class="code <%= 'query' if params[:query].present? && line.downcase.include?(params[:query]) %>"><%= line.strip %></td>
+        <td class="code <%= 'query' if params[:query].present? && line.downcase.include?(params[:query].downcase) %>"><%= line.strip %></td>
       </tr>
     <% end %>
     </tbody>
