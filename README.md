@@ -7,8 +7,7 @@ Tail command for your .log files via browser. In order to have a quick access to
 
 Also you can highlight any particular string you are looking for.
 
-![How it works](how_it_works.gif)
-
+![How it works](how_it_works.png)
 
 ##Installation
 
@@ -33,8 +32,6 @@ Any *nix (including Mac OS) system.
 Ruby 1.9.3+
 
 Rails 4.0+
-
-No other gems required. No jQuery or any JS frameworks required.
 
 ##License
 
