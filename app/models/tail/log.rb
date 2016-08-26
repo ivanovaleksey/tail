@@ -16,14 +16,13 @@ module Tail
     end
 
     def flush(file_name)
-      begin
-        f = File.open "log/#{Rails.env}.log", 'w'
-        f.close
-          Rails.logger.warn "#{Rails.env}.log flushed"
-      rescue => e
-        Rails.logger.error(e.message)
-        Rails.logger.error(e.backtrace[0..3].join("\n"))
-      end
+      log_name = "#{Rails.env}.log"
+      f = File.open Rails.root.join('log', log_name), 'w'
+      f.close
+      Rails.logger.warn "#{log_name} flushed"
+    rescue => e
+      Rails.logger.error(e.message)
+      Rails.logger.error(e.backtrace[0..3].join("\n"))
     end
 
     def n=(value)

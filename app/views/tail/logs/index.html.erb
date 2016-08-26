@@ -1,20 +1,9 @@
-<%= content_for :title, params[:file_name] || "#{Rails.env}.log" %>
+<% content_for :title, params[:file_name] || "#{Rails.env}.log" %>
 
-<%= render partial: 'main' %>
+<%= render partial: 'navbar' %>
 
-<div class="links" style="">
-  <%= link_to 'Less..', tail.root_path(file_name: params[:file_name], n: (params[:n].to_i/1.5).to_i), id: 'less' %>
-  <% @web_logger.files.each do |file| %>
-      <%= link_to file, tail.root_path(file_name: file, n: params[:n]) %>
-  <% end %>
-  <%= link_to 'More..', tail.root_path(file_name: params[:file_name], n: (1.5 * params[:n].to_i).to_i), id: 'more' %>
-  <%= text_field_tag :grep, nil, autofocus: true, onkeyup: 'javascript:getGrep(this.value)' %>
+<div class="container-fluid">
+  <%= render partial: 'main' %>
 </div>
 
-<%= render partial: 'icons' %>
-
-<div id="up">
-  <%= link_to image_tag('tail/up_arrow.png', title: 'Top of the page.', display: 'none'), '#' %>
-</div>
-
-<%= javascript_tag 'window.scrollTo(0, document.body.scrollHeight);' %>
+<%= render partial: 'footer' %>

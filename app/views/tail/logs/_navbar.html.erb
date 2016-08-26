@@ -1,0 +1,22 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Logs <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <% @web_logger.files.each do |file| %>
+            <li><%= link_to file, tail.root_path(file_name: file, n: params[:n]) %></li>
+          <% end %>
+        </ul>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <%= link_to tail.root_path(file_name: params[:file_name], n: params[:n]) do %><i class="glyphicon glyphicon-refresh"></i><% end %>
+      </li>
+      <li class="left_10">
+        <%= link_to '#' do %><i class="glyphicon glyphicon-arrow-up"></i><% end %>
+      </li>
+    </ul>
+  </div>
+</nav>
