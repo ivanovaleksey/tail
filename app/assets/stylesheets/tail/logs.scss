@@ -1,0 +1,37 @@
+body {
+  margin-bottom: 60px;
+  background: #1d1f21;
+  & > .container-fluid {
+    padding: 50px 15px 10px;
+  }
+}
+a {
+  color: #333333;
+}
+.code {
+  font-family: 'Source Code Pro', Menlo, Consolas, Monaco, monospace;
+  color: white;
+}
+.footer {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 60px;
+  position: fixed;
+  background-color: #f5f5f5;
+}
+.log td:empty {
+  padding: 5px;
+}
+.size_30 {
+  font-size: 30px;
+}
+.query {
+  color: #cd6a51;
+}
+.left_10 {
+  margin-left: 10px;
+}
+.top_10 {
+  margin-top: 10px;
+}

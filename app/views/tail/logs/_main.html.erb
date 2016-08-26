@@ -1,17 +1,15 @@
 <div id="main">
-  <table class="log_table">
+  <table class="log">
     <thead>
-    <tr>
-      <th></th>
-    </tr>
+      <tr>
+        <th></th>
+      </tr>
     </thead>
     <tbody>
     <% @files.each do |line| %>
-        <tr>
-          <td <%= 'class=error' if line.downcase.include?('error') || (params[:query].present? && line.downcase.include?(params[:query])) %>>
-            <%= line %>
-          </td>
-        </tr>
+      <tr>
+        <td class="code <%= 'query' if params[:query].present? && line.downcase.include?(params[:query]) %>"><%= line.strip %></td>
+      </tr>
     <% end %>
     </tbody>
   </table>
