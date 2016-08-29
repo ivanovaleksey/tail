@@ -3,6 +3,9 @@ $(function () {
   $('input#grep').change(function () {
     getGrep(this.value);
   });
+  $('form.navbar-form-alt').submit(function (e) {
+    e.preventDefault();
+  });
 });
 
 function getGrep(text) {
