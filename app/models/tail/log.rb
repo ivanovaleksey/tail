@@ -27,7 +27,7 @@ module Tail
 
     def n=(value)
       if value.present? && value.to_i > 0
-        @n =value.to_i
+        @n = value.to_i
       else
         @n = N_VALUE
       end
